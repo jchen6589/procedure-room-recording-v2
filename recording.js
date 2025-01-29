@@ -204,6 +204,8 @@ function deleteRecording() {
   recordedChunks = []; // Clear recorded chunks
   const video = document.getElementById('video');
   video.src = ''; // Clear the video source
+  const videoElement = document.getElementById('replayVideo');
+  videoElement.style.display = 'none'; //hide the replay screen
   deleteAllVideosFromDB().then(() => {
     console.log('Video deleted from IndexedDB');
   }).catch(err => {
